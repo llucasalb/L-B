@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&B</title>
+  <link rel="shortcut icon" href="img/icon-pag.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="envelope"></div>
+  <div class="card" onclick="turnPage()">
+    <div class="back"></div>
+    <div class="front">
+      <div class="f-box">
+        <img src="https://assets.codepen.io/4927073/ValCard.png" alt="">
+      </div>
+    </div>
+    <div class="text-container">
+      <p id="page-content">
+        O que falar desse tempo todo ao teu lado? Você me faz feliz como nunca. Sou muito feliz em te ter ao
+        meu lado, você é uma mulher incrível,
+        trabalhadora, atenciosa, linda, gostosa, perfeita, maravilhosa, carismática, dedicada, você é tudo de bom. Só tenho a te agradecer por tudo e por todos os momentos juntos que passamos durante esse tempo juntos.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const pages = [
+      'O que falar desse tempo todo ao teu lado? Você me faz feliz como nunca. Sou muito feliz em te ter ao meu lado, você é uma mulher incrível, trabalhadora, atenciosa, linda, gostosa, perfeita, maravilhosa, carismática, dedicada, você é tudo de bom. Só tenho a te agradecer por tudo e por todos os momentos juntos que passamos durante esse tempo juntos.',
+      'Obrigado, de todo o coração, por ser meu abrigo e me acolher com tanto carinho. Não tenho dúvidas de que te encontrar foi uma das maiores bênçãos da minha vida, algo que guardo como um verdadeiro presente. Sou profundamente grato por cada momento que compartilhamos, por você dividir sua vida comigo, por me fazer sentir único e especial.',
+      'Às vezes, me pego navegando pelas memórias de cada momento que passamos juntos, revivendo os detalhes que ando guardando no coração. Parece que, na tua ausência, até o silêncio se enche de sentimentos, como se ele guardasse cada palavra que ainda quero te dizer, cada abraço que ainda quero te dar.',
+      'Se o silêncio realmente falasse, como dizem os poetas, ele mesmo iria até tua casa, sussurrar no teu ouvido sobre a imensa saudade que sinto dos momentos que ainda não foram vividos por nós.',
+      'Você pra mim é como encostar o rosto no travesseiro depois de um dia cansativo e saber que tá tudo bem...\n É como o sol que entra pela janela de manhã, trazendo calor e um novo começo, mesmo nos dias mais difíceis.',
+      'Estar com você é como uma pausa tranquila no meio da correria da vida, onde o mundo parece finalmente fazer sentido.\n Quando penso em nós, sinto uma paz que não sei explicar, como o som da chuva lá fora enquanto estamos seguros, lado a lado.',
+      'Você é aquele conforto inimaginável, como uma música favorita que nunca cansa e sempre toca fundo, não importa quantas vezes eu ouça. \nEstar com você é como reencontrar um lugar seguro dentro de mim, um lugar onde posso ser eu mesmo, sem medo.',
+      'Estar contigo é igual sentir que o mundo desacelera, que tudo ganha mais cor e sentido só por saber que você está aqui. \nCom você, cada instante vira lembrança preciosa, cada dia, uma nova chance de ser feliz.',
+      'Eu te amo de todas as formas possíveis...',
+      'Cânticos 4:7 - "Você é toda linda, minha querida; em você não há defeito algum." \nCada detalhe em você é único, cada traço tem sua própria beleza. Quando te olho, percebo que não há nada a ser mudado, pois você já é perfeita assim, exatamente do jeito que é.',
+      'Eu preferiria enfrentar qualquer tempestade ao seu lado do que navegar em águas tranquilas com outra pessoa. Prefiro encarar cada desafio contigo, sabendo que tenho o seu apoio e o seu amor, do que seguir um caminho fácil sem você. Porque, com você, até as tempestades têm um jeito de lar, e mesmo nos momentos difíceis, encontro paz em saber que estamos juntos.',
+      'Me apaixonei por você antes de qualquer coisa... Antes do beijo, antes do primeiro abraço, antes do toque... Me apaixonei com o coração. Foi algo puro e natural, uma conexão que surgiu sem pedir permissão. ',
+      'Posso esquecer tudo, menos o dia que eu comecei a falar contigo sem saber que eu iria te amar tanto. Lembro das nossas conversas, dos risos que trocamos e de como você trouxe luz para minha vida de um jeito que eu nunca esperava. Desde aquele momento, meu coração começou a bater de uma forma diferente, e, sem perceber, você se tornou a razão da minha paz.',
+      'Você nem faz ideia de quantos sorrisos eu já dei só de pensar em você. Cada lembrança sua ilumina meu dia e transforma momentos comuns em algo especial. É como se a sua presença estivesse sempre comigo, aquecendo meu coração e trazendo alegria mesmo nos dias mais nublados.',
+      'Eu vou te amar nos dias bons, mas vou te amar ainda mais nos dias ruins, porque sei que é quando você mais vai precisar. Estarei ao seu lado, segurando sua mão quando o mundo parecer pesado, sendo seu apoio e sua força quando tudo desmoronar.',
+      'Pra que vou olhar pra outra pessoa, se quando olho para você sinto que não preciso de mais ninguém na minha vida? Nos seus olhos, encontro tudo o que sempre procurei: paz, carinho e um lar onde meu coração descansa. É como se o mundo todo desaparecesse e só existisse você, como se cada momento ao seu lado fosse suficiente para preencher todos os espaços em mim.',
+      'Eu prefiro passar uma vida com você do que enfrentar uma eternidade sozinho. Porque, ao seu lado, o tempo ganha valor, cada segundo se torna precioso, e até os dias mais comuns se tornam especiais. Você é o que dá sentido aos meus dias e o que torna qualquer sacrifício leve. Estar com você transforma a vida em algo completo, algo que nem a eternidade sem você poderia oferecer.',
+      'Você faz as nuvens cinzentas desaparecerem e ilumina o céu com o sol do seu amor. Nos dias sombrios, sua presença é a luz que me guia e a força que me levanta. É como se, ao seu lado, até as tempestades perdessem o poder, e o mundo voltasse a brilhar com a sua essência.',
+      'Às vezes me pego pensando em como tive sorte de ter encontrado alguém tão incrível e capaz de me fazer tão feliz. Você é aquele presente inesperado que trouxe luz e alegria para minha vida, de um jeito que eu nem sabia que precisava.',
+      'Saber que você está ao meu lado faz com que tudo pareça possível, e sinto um agradecimento profundo por cada momento que passamos juntos. Ter você é uma dádiva que agradeço todos os dias, Deus sempre soube exatamente o que meu coração precisava.',
+      'Muito obrigado por me apoiar nas minhas conquistas e nas pequenas coisas da vida. Seu apoio é meu impulso nos dias de vitória e meu conforto nos dias difíceis. Saber que você está ao meu lado, torcendo por mim, faz com que cada esforço valha a pena. Você me inspira a ser melhor e faz até os menores momentos ganharem um brilho especial.',
+      'Com você, cada gesto simples ganha um significado profundo, e eu me sinto amado de uma forma que nunca imaginei. É incrível como, só por estar ao meu lado, você traz paz ao meu coração e alegria à minha vida.',
+      'Fiz essa pequena homenagem só pra te mostrar mais ou menos o tamanho do meu amor por ti. Palavras são poucas para descrever tudo o que sinto, mas espero que, ao ler, você consiga sentir um pouco da imensidão desse amor. Cada gesto, cada linha é só uma parte do que carrego no coração, porque, ao seu lado, o amor só cresce, como se não houvesse limite.',
+      'Muito obrigado por me fazer sentir o mais puro amor como nunca havia sentido. Você trouxe uma nova forma de felicidade para minha vida, algo profundo e verdadeiro que preenche cada parte de mim. Estar ao seu lado me faz acreditar que o amor pode mesmo transformar tudo, que existem sentimentos que transcendem palavras.',
+      'Termino essa declaração com o poema de  Luís Vaz de Camões, que pra mim tem muito significado, são palavras que ecoam em mim simplesmente pelo fato de te amar: \n\nAmor é fogo que arde sem se ver,\né ferida que dói, e não se sente;\né um contentamento descontente,\né dor que desatina sem doer.',
+      'É um não querer mais que bem querer;\né um andar solitário entre a gente;\né nunca contentar-se de contente;\né um cuidar que ganha em se perder.',
+      'É querer estar preso por vontade;\né servir a quem vence, o vencedor;\né ter com quem nos mata, lealdade.\n\nMas como causar pode seu favor\nnos corações humanos amizade,\nse tão contrário a si é o mesmo Amor',
+      'Eu te amo muito!'
+    ];
+
+    let currentPage = 0;
+
+    function turnPage() {
+      currentPage = (currentPage + 1) % pages.length;
+      document.getElementById('page-content').innerText = pages[currentPage];
+    }
+  </script>
+</body>
+</html>
